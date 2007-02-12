@@ -1,5 +1,5 @@
 Summary:	Leptonica - image processing and analysis library
-Summary(pl):	Leptonica - biblioteka do przetwarzania i analizy obrazu
+Summary(pl.UTF-8):   Leptonica - biblioteka do przetwarzania i analizy obrazu
 Name:		leptonlib
 Version:	1.41
 Release:	1
@@ -17,12 +17,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Leptonica - image processing and analysis library.
 
-%description -l pl
+%description -l pl.UTF-8
 Leptonica - biblioteka do przetwarzania i analizy obrazu.
 
 %package devel
 Summary:	Header files for lepton library
-Summary(pl):	Pliki nag≥Ûwkowe biblioteki lepton
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe biblioteki lepton
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libjpeg-devel
@@ -32,19 +32,19 @@ Requires:	libtiff-devel
 %description devel
 Header files for lepton library.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe biblioteki lepton.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe biblioteki lepton.
 
 %package static
 Summary:	Static lepton library
-Summary(pl):	Statyczna biblioteka lepton
+Summary(pl.UTF-8):   Statyczna biblioteka lepton
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static lepton library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka lepton.
 
 %prep
