@@ -81,6 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.html version-notes.html moller52.jpg
 %attr(755,root,root) %{_libdir}/liblept.so.*.*
+%attr(755,root,root) %ghost %{_libdir}/liblept.so.1
 
 %files devel
 %defattr(644,root,root,755)
