@@ -1,12 +1,12 @@
 Summary:	Leptonica - image processing and analysis library
 Summary(pl.UTF-8):	Leptonica - biblioteka do przetwarzania i analizy obrazu
 Name:		leptonlib
-Version:	1.42
+Version:	1.45
 Release:	1
 License:	BSD-like
 Group:		Libraries
 Source0:	http://www.leptonica.com/source/%{name}-%{version}.tar.gz
-# Source0-md5:	23eb2079c9c923969cacd189530db59b
+# Source0-md5:	0a94cb90aab28a417dab7541e5beec13
 Patch0:		%{name}-link.patch
 URL:		http://www.leptonica.com/
 BuildRequires:	libjpeg-devel
