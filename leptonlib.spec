@@ -8,6 +8,7 @@ Group:		Libraries
 Source0:	http://www.leptonica.com/source/%{name}-%{version}.tar.gz
 # Source0-md5:	0644d7207c0ae212b8cfa5ca305722c6
 Patch0:		%{name}-link.patch
+Patch1:		%{name}-endiantest.patch
 URL:		http://www.leptonica.com/
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
@@ -50,6 +51,7 @@ Statyczna biblioteka lepton.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} -C src nodebug \
