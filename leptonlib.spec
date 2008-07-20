@@ -1,18 +1,22 @@
 Summary:	Leptonica - image processing and analysis library
 Summary(pl.UTF-8):	Leptonica - biblioteka do przetwarzania i analizy obrazu
 Name:		leptonlib
-Version:	1.55
+Version:	1.57
 Release:	1
 License:	BSD-like
 Group:		Libraries
 Source0:	http://www.leptonica.com/source/%{name}-%{version}.tar.gz
-# Source0-md5:	a66ad0d2c04bbb87db750ba619b2d578
-Patch0:		%{name}-link.patch
+# Source0-md5:	4c0deb5b18765e9db2dd675c5fb47d08
+Patch0:		%{name}-shared.patch
 Patch1:		%{name}-endiantest.patch
 URL:		http://www.leptonica.com/
+BuildRequires:	autoconf >= 2.50
+BuildRequires:	automake
+BuildRequires:	giflib-devel >= 4
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtiff-devel
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,6 +30,7 @@ Summary:	Header files for lepton library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki lepton
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	giflib-devel >= 4
 Requires:	libjpeg-devel
 Requires:	libpng-devel
 Requires:	libtiff-devel
@@ -54,24 +59,21 @@ Statyczna biblioteka lepton.
 %patch1 -p1
 
 %build
-%{__make} -C src nodebug \
-	CC="%{__cc} -ansi -DANSI -D_BSD_SOURCE" \
-	OPTIMIZE="%{rpmcflags}"
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
+%configure
 
-%{__make} -C src shared \
-	CC="%{__cc} -ansi -DANSI -D_BSD_SOURCE" \
-	LIBRARIAN_SHARED="%{__cc} -shared" \
-	OPTIMIZE="%{rpmcflags} -fPIC" \
-	LDFLAGS="%{rpmldflags}" \
-	SHARED=yes
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_includedir}/lept,%{_libdir}}
 
-install lib/nodebug/liblept.a $RPM_BUILD_ROOT%{_libdir}
-cp -af lib/shared/liblept.so* $RPM_BUILD_ROOT%{_libdir}
-install src/*.h $RPM_BUILD_ROOT%{_includedir}/lept
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -81,14 +83,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.html version-notes.html moller52.jpg
+%doc README.html leptonica-license.txt version-notes.html moller52.jpg
 %attr(755,root,root) %{_libdir}/liblept.so.*.*
 %attr(755,root,root) %ghost %{_libdir}/liblept.so.1
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/liblept.so
-%{_includedir}/lept
+%{_libdir}/liblept.la
+%{_includedir}/liblept
 
 %files static
 %defattr(644,root,root,755)
