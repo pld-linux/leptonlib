@@ -1,0 +1,27 @@
+--- leptonlib-1.57/src/Makefile.am.orig	2008-07-15 08:35:02.000000000 +0200
++++ leptonlib-1.57/src/Makefile.am	2008-07-20 09:03:53.014038059 +0200
+@@ -6,10 +6,10 @@
+ MAKE = make -f Makefile
+ AM_CFLAGS = -D_BSD_SOURCE -DANSI -fPIC
+ AM_CPPFLAGS = $(ENDIANNESS)
+-CFLAGS = -O2
+ 
+-lib_LIBRARIES = liblept.a
+-liblept_a_SOURCES = adaptmap.c affine.c \
++lib_LTLIBRARIES = liblept.la
++liblept_la_LDFLAGS = -version-info 1:57:0
++liblept_la_SOURCES = adaptmap.c affine.c \
+  arithlow.c arrayaccess.c \
+  bardecode.c \
+  baseline.c bbuffer.c \
+--- leptonlib-1.57/configure.ac.orig	2008-07-15 08:35:02.000000000 +0200
++++ leptonlib-1.57/configure.ac	2008-07-20 08:59:03.882042250 +0200
+@@ -114,7 +114,7 @@
+ 
+ # Check where all the following programs are and set
+ # variables accordingly:
+-AC_PROG_RANLIB
++AC_PROG_LIBTOOL
+ # AC_PROG_LN_S
+ # AC_PATH_PROG(MV, mv)
+ # AC_PATH_PROG(CP, cp)
