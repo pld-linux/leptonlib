@@ -15,6 +15,7 @@ BuildRequires:	automake
 BuildRequires:	giflib-devel >= 4
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
+BuildRequires:	libstdc++-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
