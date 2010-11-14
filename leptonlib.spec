@@ -1,21 +1,20 @@
 Summary:	Leptonica - image processing and analysis library
 Summary(pl.UTF-8):	Leptonica - biblioteka do przetwarzania i analizy obrazu
 Name:		leptonlib
-Version:	1.57
-Release:	4
+Version:	1.67
+Release:	1
 License:	BSD-like
 Group:		Libraries
+#Source0Download: http://www.leptonica.com/download.html
 Source0:	http://www.leptonica.com/source/%{name}-%{version}.tar.gz
-# Source0-md5:	4c0deb5b18765e9db2dd675c5fb47d08
-Patch0:		%{name}-shared.patch
-Patch1:		%{name}-endiantest.patch
+# Source0-md5:	23f03ad6a0cab67714df98110ad2e141
+Patch0:		%{name}-endiantest.patch
 URL:		http://www.leptonica.com/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	giflib-devel >= 4
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
-BuildRequires:	libstdc++-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -57,7 +56,6 @@ Statyczna biblioteka lepton.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__libtoolize}
@@ -71,7 +69,6 @@ Statyczna biblioteka lepton.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_includedir}/lept,%{_libdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -85,14 +82,14 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.html leptonica-license.txt version-notes.html moller52.jpg
-%attr(755,root,root) %{_libdir}/liblept.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/liblept.so.1
+%attr(755,root,root) %{_libdir}/liblept.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/liblept.so.0
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/liblept.so
 %{_libdir}/liblept.la
-%{_includedir}/liblept
+%{_includedir}/leptonica
 
 %files static
 %defattr(644,root,root,755)
