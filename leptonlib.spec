@@ -2,13 +2,14 @@ Summary:	Leptonica - image processing and analysis library
 Summary(pl.UTF-8):	Leptonica - biblioteka do przetwarzania i analizy obrazu
 Name:		leptonlib
 Version:	1.67
-Release:	3
+Release:	4
 License:	BSD-like
 Group:		Libraries
 #Source0Download: http://www.leptonica.com/download.html
 Source0:	http://www.leptonica.com/source/%{name}-%{version}.tar.gz
 # Source0-md5:	23f03ad6a0cab67714df98110ad2e141
 Patch0:		%{name}-endiantest.patch
+Patch1:		%{name}-includes.patch
 URL:		http://www.leptonica.com/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -56,6 +57,7 @@ Statyczna biblioteka lepton.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
