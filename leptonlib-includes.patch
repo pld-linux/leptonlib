@@ -1,0 +1,10 @@
+--- leptonlib-1.67/src/pngio.c~	2010-09-18 19:20:42.000000000 +0200
++++ leptonlib-1.67/src/pngio.c	2012-02-09 00:21:29.856671295 +0100
+@@ -105,6 +105,7 @@
+ #if  HAVE_LIBPNG   /* defined in environ.h */
+ /* --------------------------------------------*/
+ 
++#include <zlib.h>
+ #include "png.h"
+ 
+ /* ----------------Set defaults for read/write options ----------------- */
