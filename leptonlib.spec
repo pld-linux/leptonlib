@@ -1,15 +1,14 @@
 Summary:	Leptonica - image processing and analysis library
 Summary(pl.UTF-8):	Leptonica - biblioteka do przetwarzania i analizy obrazu
 Name:		leptonlib
-Version:	1.67
-Release:	4
+Version:	1.69
+Release:	1
 License:	BSD-like
 Group:		Libraries
-#Source0Download: http://www.leptonica.com/download.html
-Source0:	http://www.leptonica.com/source/%{name}-%{version}.tar.gz
-# Source0-md5:	23f03ad6a0cab67714df98110ad2e141
+#Source0Download: http://code.google.com/p/leptonica/downloads/list
+Source0:	http://leptonica.googlecode.com/files/leptonica-%{version}.tar.bz2
+# Source0-md5:	3c442f4edaf0be25dc92dc0012f94a37
 Patch0:		%{name}-endiantest.patch
-Patch1:		%{name}-includes.patch
 URL:		http://www.leptonica.com/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -17,7 +16,9 @@ BuildRequires:	giflib-devel >= 4
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtiff-devel
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
+BuildRequires:	libwebp-devel
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,6 +36,8 @@ Requires:	giflib-devel >= 4
 Requires:	libjpeg-devel
 Requires:	libpng-devel
 Requires:	libtiff-devel
+Requires:	libwebp-devel
+Requires:	zlib-devel
 
 %description devel
 Header files for lepton library.
@@ -55,9 +58,8 @@ Static lepton library.
 Statyczna biblioteka lepton.
 
 %prep
-%setup -q
+%setup -q -n leptonica-%{version}
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__libtoolize}
@@ -65,7 +67,10 @@ Statyczna biblioteka lepton.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+# programs are mostly examples or tests (seems nothing really useful)
+# and they have too generic names
+%configure \
+	--disable-programs
 
 %{__make}
 
@@ -85,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.html leptonica-license.txt version-notes.html moller52.jpg
 %attr(755,root,root) %{_libdir}/liblept.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/liblept.so.0
+%attr(755,root,root) %ghost %{_libdir}/liblept.so.3
 
 %files devel
 %defattr(644,root,root,755)
