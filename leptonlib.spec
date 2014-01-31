@@ -80,6 +80,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/liblept.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -95,8 +97,8 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/liblept.so
-%{_libdir}/liblept.la
 %{_includedir}/leptonica
+%{_pkgconfigdir}/lept.pc
 
 %files static
 %defattr(644,root,root,755)
