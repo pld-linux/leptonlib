@@ -90,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.html leptonica-license.txt version-notes.html moller52.jpg
 %attr(755,root,root) %{_libdir}/liblept.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/liblept.so.3
+%attr(755,root,root) %ghost %{_libdir}/liblept.so.4
 
 %files devel
 %defattr(644,root,root,755)
