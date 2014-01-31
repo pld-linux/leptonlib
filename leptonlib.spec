@@ -1,18 +1,18 @@
 Summary:	Leptonica - image processing and analysis library
 Summary(pl.UTF-8):	Leptonica - biblioteka do przetwarzania i analizy obrazu
 Name:		leptonlib
-Version:	1.69
-Release:	3
+Version:	1.70
+Release:	1
 License:	BSD-like
 Group:		Libraries
 #Source0Download: http://code.google.com/p/leptonica/downloads/list
-Source0:	http://leptonica.googlecode.com/files/leptonica-%{version}.tar.bz2
-# Source0-md5:	3c442f4edaf0be25dc92dc0012f94a37
+Source0:	http://www.leptonica.com/source/leptonica-%{version}.tar.gz
+# Source0-md5:	50cc3e5287ef6e02429f96c30d96b569
 Patch0:		%{name}-endiantest.patch
 URL:		http://www.leptonica.com/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	giflib-devel >= 4
+BuildRequires:	giflib-devel >= 5
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtiff-devel
@@ -32,7 +32,7 @@ Summary:	Header files for lepton library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki lepton
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	giflib-devel >= 4
+Requires:	giflib-devel >= 5
 Requires:	libjpeg-devel
 Requires:	libpng-devel
 Requires:	libtiff-devel
