@@ -70,7 +70,8 @@ Statyczna biblioteka lepton.
 # programs are mostly examples or tests (seems nothing really useful)
 # and they have too generic names
 %configure \
-	--disable-programs
+	--disable-programs \
+	--disable-silent-rules
 
 %{__make}
 
