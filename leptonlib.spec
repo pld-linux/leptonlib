@@ -5,7 +5,7 @@ Version:	1.71
 Release:	1
 License:	BSD-like
 Group:		Libraries
-#Source0Download: http://code.google.com/p/leptonica/downloads/list
+#Source0Download: http://www.leptonica.com/download.html
 Source0:	http://www.leptonica.com/source/leptonica-%{version}.tar.gz
 # Source0-md5:	790f34d682e6150c12c54bfe4a824f7f
 Patch0:		%{name}-endiantest.patch
@@ -18,6 +18,7 @@ BuildRequires:	libpng-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libtool >= 2:2
 BuildRequires:	libwebp-devel
+BuildRequires:	openjpeg2-devel >= 2
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
