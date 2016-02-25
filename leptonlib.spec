@@ -1,13 +1,13 @@
 Summary:	Leptonica - image processing and analysis library
 Summary(pl.UTF-8):	Leptonica - biblioteka do przetwarzania i analizy obrazu
 Name:		leptonlib
-Version:	1.72
-Release:	2
+Version:	1.73
+Release:	1
 License:	BSD-like
 Group:		Libraries
 #Source0Download: http://www.leptonica.com/download.html
 Source0:	http://www.leptonica.com/source/leptonica-%{version}.tar.gz
-# Source0-md5:	7581db29f8442197ce68e766c6047c4b
+# Source0-md5:	092cea2e568cada79fff178820397922
 Patch0:		%{name}-endiantest.patch
 URL:		http://www.leptonica.com/
 BuildRequires:	autoconf >= 2.50
@@ -94,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.html leptonica-license.txt version-notes.html moller52.jpg
 %attr(755,root,root) %{_libdir}/liblept.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/liblept.so.4
+%attr(755,root,root) %ghost %{_libdir}/liblept.so.5
 
 %files devel
 %defattr(644,root,root,755)
