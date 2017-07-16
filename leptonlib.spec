@@ -1,13 +1,13 @@
 Summary:	Leptonica - image processing and analysis library
 Summary(pl.UTF-8):	Leptonica - biblioteka do przetwarzania i analizy obrazu
 Name:		leptonlib
-Version:	1.74.1
-Release:	2
+Version:	1.74.4
+Release:	1
 License:	BSD-like
 Group:		Libraries
 #Source0Download: http://www.leptonica.com/download.html
 Source0:	http://www.leptonica.com/source/leptonica-%{version}.tar.gz
-# Source0-md5:	ad30f5034a2eb84f91062ccd1d8a1734
+# Source0-md5:	4f32be9bd2e2c142ba018037ab5d746f
 URL:		http://www.leptonica.com/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
