@@ -5,10 +5,10 @@ Version:	1.78.0
 Release:	1
 License:	BSD-like
 Group:		Libraries
-#Source0Download: http://www.leptonica.com/download.html
-Source0:	http://www.leptonica.com/source/leptonica-%{version}.tar.gz
+#Source0Download: http://www.leptonica.org/download.html
+Source0:	http://www.leptonica.org/source/leptonica-%{version}.tar.gz
 # Source0-md5:	5702581e246a3415d3561c4358d53cff
-URL:		http://www.leptonica.com/
+URL:		http://www.leptonica.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	giflib-devel >= 5.1.3
