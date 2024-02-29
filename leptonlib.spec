@@ -1,15 +1,15 @@
 Summary:	Leptonica - image processing and analysis library
 Summary(pl.UTF-8):	Leptonica - biblioteka do przetwarzania i analizy obrazu
 Name:		leptonlib
-Version:	1.83.0
+Version:	1.84.1
 Release:	1
 License:	BSD-like
 Group:		Libraries
 #Source0Download: http://www.leptonica.org/download.html
 Source0:	http://www.leptonica.org/source/leptonica-%{version}.tar.gz
-# Source0-md5:	d1eb59617df616e63959492dd7aadf19
+# Source0-md5:	01e6de7af2ba93b8350cdc3f7aeb0fbf
 URL:		http://www.leptonica.org/
-BuildRequires:	autoconf >= 2.50
+BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake
 BuildRequires:	giflib-devel >= 5.1.3
 BuildRequires:	libjpeg-devel
@@ -17,10 +17,12 @@ BuildRequires:	libpng-devel
 BuildRequires:	libtiff-devel >= 4
 BuildRequires:	libtool >= 2:2
 BuildRequires:	libwebp-devel >= 0.5.0
-BuildRequires:	openjpeg2-devel >= 2.0.0
+BuildRequires:	openjpeg2-devel >= 2.1.0
 BuildRequires:	pkgconfig
 BuildRequires:	zlib-devel
+Requires:	giflib >= 5.1.3
 Requires:	libwebp >= 0.5.0
+Requires:	openjpeg2 >= 2.1.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -39,7 +41,7 @@ Requires:	libjpeg-devel
 Requires:	libpng-devel
 Requires:	libtiff-devel >= 4
 Requires:	libwebp-devel >= 0.5.0
-Requires:	openjpeg2 >= 2.0.0
+Requires:	openjpeg2-devel >= 2.1.0
 Requires:	zlib-devel
 
 %description devel
