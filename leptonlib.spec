@@ -5,13 +5,13 @@
 Summary:	Leptonica - image processing and analysis library
 Summary(pl.UTF-8):	Leptonica - biblioteka do przetwarzania i analizy obrazu
 Name:		leptonlib
-Version:	1.84.1
-Release:	3
+Version:	1.86.0
+Release:	1
 License:	BSD-like
 Group:		Libraries
 #Source0Download: http://www.leptonica.org/download.html
 Source0:	http://www.leptonica.org/source/leptonica-%{version}.tar.gz
-# Source0-md5:	01e6de7af2ba93b8350cdc3f7aeb0fbf
+# Source0-md5:	28f7510d2990f281c75a095d3284f2a9
 URL:		http://www.leptonica.org/
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake
@@ -103,14 +103,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.html leptonica-license.txt version-notes.html moller52.jpg
 %attr(755,root,root) %{_libdir}/libleptonica.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libleptonica.so.6
+%ghost %{_libdir}/libleptonica.so.6
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libleptonica.so
+%{_libdir}/libleptonica.so
 %{_includedir}/leptonica
 %{_pkgconfigdir}/lept.pc
-%{_libdir}/cmake/LeptonicaConfig*.cmake
 
 %if %{with static_libs}
 %files static
